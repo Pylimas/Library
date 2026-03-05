@@ -30,10 +30,9 @@ include_once "dbh.inc.php"
             <tbody>
                 <?php 
                     $sql = "SELECT * FROM book;";
-                    $result = mysqli_query($conn, $sql);
-                    $resultCheck = mysqli_num_rows($result);
-                    if($resultCheck>0){
-                        while ($row = mysqli_fetch_assoc($result)){
+                    $result = $pdo->query($sql);
+                    if($result->rowCount()>0){
+                        while ($row = $result->fetch()){
                             echo '<tr>
                             <th>'.$row['id'].'</th>
                             <td>'.$row['name'].'</td>
