@@ -1,0 +1,24 @@
+/*#region Header*/
+body{
+    padding:0;
+    margin:0;
+    background-color: #F1EFEC;
+    color:#030303;
+}
+a{
+    text-decoration: none;
+    color: #030303;
+    padding:30px;
+}
+nav{
+    height: 60px;
+    background-color: #D4C9BE;
+    align-content: center;
+}
+header{
+    display: flex;
+    background-color: #123458;
+    justify-content: end;
+    padding-right: 30px;
+}
+/*#endregion*/
