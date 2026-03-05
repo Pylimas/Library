@@ -22,3 +22,14 @@ header{
     padding-right: 30px;
 }
 /*#endregion*/
+
+.tableContainer{
+    background-color: #123458;
+    padding:10px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+table.custom-table{
+    width: 70%;
+}
