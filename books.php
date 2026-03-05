@@ -8,44 +8,73 @@ include_once "dbh.inc.php"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="style.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
     crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" />
 </head>
 <body>
     <?php require_once "header.php"?>
     <main>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Book name</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Isbn</th>
-                    <th scope="col">Quantity in library</th>
-                    <th scope="col">Free books</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                    $sql = "SELECT * FROM book;";
-                    $result = $pdo->query($sql);
-                    if($result->rowCount()>0){
-                        while ($row = $result->fetch()){
-                            echo '<tr>
-                            <th>'.$row['id'].'</th>
-                            <td>'.$row['name'].'</td>
-                            <td>'.$row['author'].'</td>
-                            <td>'.$row['isbn'].'</td>
-                            <td>'.$row['quantity'].'</td>
-                            <td>'.$row['free'].'</td>
-                            </tr>';
+        <div class="tableContainer">
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Book name</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Isbn</th>
+                        <th scope="col">Quantity in library</th>
+                        <th scope="col">Free books</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        $sql = "SELECT * FROM book;";
+                        $result = $pdo->query($sql);
+                        if($result->rowCount()>0){
+                            while ($row = $result->fetch()){
+                                echo '<tr>
+                                <th>'.$row['id'].'</th>
+                                <td>'.$row['name'].'</td>
+                                <td>'.$row['author'].'</td>
+                                <td>'.$row['isbn'].'</td>
+                                <td>'.$row['quantity'].'</td>
+                                <td>'.$row['free'].'</td>
+                                </tr>';
+                            }
                         }
-                    }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <form action="addBook.php" method="post">
+                <div class="mb-3">
+                    <label for="bookName" class="form-label">Book name</label>
+                    <input type="text" class="form-control" id="bookName" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="bookAuthor" class="form-label">Book author</label>
+                    <input type="text" class="form-control" id="bookAuthor" name="author">
+                </div>
+                <div class="mb-3">
+                    <label for="isbn" class="form-label">Book isbn</label>
+                    <input type="text" class="form-control" id="isbn" name="isbn">
+                </div>
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <input type="number" class="form-control" id="quantity" name="quantity">
+                </div>
+                <select class="form-select" aria-label="Default select example" name="genre">
+                    <option selected >Choose genre</option>
+                    <option value="Clasic">Clasic</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Fantasy">Fantasy</option>
+                </select>
+                <input type="submit"/>
+            </form>
+        </div>
     </main>
 </body>
 </html>
