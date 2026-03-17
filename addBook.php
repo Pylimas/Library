@@ -4,22 +4,22 @@ if($_SERVER["REQUEST_METHOD"] =="POST"){
     $author=$_POST["author"];
     $isbn=$_POST["isbn"];
     $quantity=$_POST["quantity"];
-    $genre=$_POST["genre"];
     try {
         require_once "dbh.inc.php";
-        $query = "INSERT INTO book (name, author,isbn,quantity,free,genre) VALUES (?,?,?,?,?,?);";
+        $query = "INSERT INTO book (book_name, author,isbn,quantity,free) VALUES (?,?,?,?,?);";
         $stmt = $pdo->prepare($query);
-        $stmt->execute([$name, $author, $isbn, $quantity, 0, $genre]);
+        $stmt->execute([$name, $author, $isbn, $quantity,$quantity]);
         $pdo=null;
         $stmt=null;
+        header("Location: books.php");
         exit();
-        header("Location: ../books.php");
     }catch(PDOException $e){
         die("Query failed: ". $e->getMessage());
     }
 
 }else{
-    header("Location: ../books.php");
+    header("Location: books.php");
+    exit();
 }
 
 ?>
