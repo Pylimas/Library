@@ -1,8 +1,7 @@
 <?php
 $dbUsename="root";
-$dbPassword="";
-$dbPort=3307;
-$dns = "mysql:host=localhost;port=3307;dbname=library2";
+$dbPassword="mysql";
+$dns = "mysql:host=localhost;dbname=library";
 
 try{
     $pdo = new PDO($dns, $dbUsename,$dbPassword);
