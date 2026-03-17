@@ -20,7 +20,7 @@ include_once "dbh.inc.php"
             <table class="table custom-table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        
                         <th scope="col">Book name</th>
                         <th scope="col">Author</th>
                         <th scope="col">Isbn</th>
@@ -35,8 +35,7 @@ include_once "dbh.inc.php"
                         if($result->rowCount()>0){
                             while ($row = $result->fetch()){
                                 echo '<tr>
-                                <th>'.$row['id'].'</th>
-                                <td>'.$row['name'].'</td>
+                                <td>'.$row['book_name'].'</td>
                                 <td>'.$row['author'].'</td>
                                 <td>'.$row['isbn'].'</td>
                                 <td>'.$row['quantity'].'</td>
@@ -66,12 +65,6 @@ include_once "dbh.inc.php"
                     <label for="quantity" class="form-label">Quantity</label>
                     <input type="number" class="form-control" id="quantity" name="quantity">
                 </div>
-                <select class="form-select" aria-label="Default select example" name="genre">
-                    <option selected >Choose genre</option>
-                    <option value="Clasic">Clasic</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Fantasy">Fantasy</option>
-                </select>
                 <input type="submit"/>
             </form>
         </div>
