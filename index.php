@@ -13,13 +13,42 @@
     <?php include_once 'header.php'?>
     <main>
         <section>
-            
+            <div class="intro">
+                <h1>Library page</h1>
+                <p> Minima corporis libero doloremque eos quod nostrum saepe sed 
+                    natus officia debitis fugiat voluptatem iusto itaque alias, 
+                    soluta porro voluptates culpa! Saepe!</p>
+            </div>
         </section>
-        <section>
-
+        <section class="about_container">
+            <div class="about_intro">
+                <h3>About page</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat commodi voluptates saepe voluptatum libero nemo autem error quod nulla. Impedit tenetur excepturi iste reprehenderit. Dignissimos alias in perferendis vero consequatur.<br>Nisi proident sint esse ad. Cupidatat aliquip ullamco nulla nostrud aliquip ad consequat est. Eiusmod labore fugiat duis incididunt amet elit do ullamco sit cupidatat eu labore. Laborum irure ad duis amet. Non proident nostrud anim amet tempor ex et irure.</p>
+            </div>
+            <div class="points_container">
+                <div class="point">
+                    <img src="gem.png" class="about_img"/>
+                    <p>Non ex duis laboris excepteur occaecat amet qui.Esse ullamco duis esse culpa reprehenderit officia adipisicing mollit magna enim veniam.</p>
+                </div>
+                <div class="point">
+                    <img src="gem.png" class="about_img"/>
+                    <p>Occaecat veniam cillum exercitation dolor id ea ea sit magna. Qui exercitation laborum ad aliquip duis ut est in cupidatat magna qui.</p>
+                </div>
+            </div>
         </section>
-        <section>
-
+        <section class="title_container">
+            <div class="title_text">
+                <h3>Title</h3>
+                <p>Duis irure duis ut officia aute cillum cillum eu consectetur nulla. Amet id eu eiusmod irure ullamco anim irure do cillum esse elit. Velit ex ullamco labore cillum reprehenderit ullamco quis nulla cillum cillum dolore incididunt nulla. Fugiat aute velit aliquip id ea ullamco tempor Lorem id. Et cupidatat nostrud eu sint exercitation velit ut nulla. Aute exercitation et cupidatat minim non mollit aliquip dolor excepteur est irure do pariatur mollit. Non nisi fugiat labore excepteur id ad.</p>
+            </div>
+            <img class="title_img" src="5.png"/>
+        </section>
+        <section class="title_container">
+            <img class="title_img" src="19.png"/>
+            <div class="title_text">
+                <h3>Title</h3>
+                <p>Occaecat qui sunt nisi magna aute ad. Adipisicing duis magna ullamco sint. Aliquip deserunt aliqua magna labore minim. Sint aliquip nostrud eiusmod elit aliqua culpa anim ipsum excepteur exercitation. Lorem ex in cillum ad nisi sit cillum veniam veniam elit ullamco.</p>
+            </div>
         </section>
     </main>
 </body>
