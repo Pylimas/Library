@@ -89,14 +89,16 @@
             </div>
         </section>
         <section class="description">
-            <div>
-
+            <div class="descr_text">
+                <h3>Description</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus expedita quo ab quas harum voluptate facilis inventore rem, eius ex incidunt magnam sequi, iste vero cum animi perspiciatis pariatur nisi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis veniam iste inventore facere doloremque corporis culpa. Perspiciatis rem, ea aliquam delectus voluptate saepe, reiciendis soluta nostrum id suscipit minus tempora.<br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ut a natus numquam cupiditate non temporibus deleniti sequi aperiam, amet nemo animi exercitationem excepturi eius odio totam quis, recusandae eaque? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod non explicabo, ullam accusantium ea sequi vel, quibusdam atque veniam vitae ex et? Ipsa nostrum sint rem provident placeat et vel.</p>
             </div>
-            <div>
+            <div class="d_img_container">
                 <img src="5.png" class="descr_img"/>
             </div>
         </section>
     </main>
+    <?php include_once 'footer.php'?>
     <script src="script.js"></script>
 </body>
 </html>
