@@ -37,20 +37,66 @@
             </div>
         </section>
         <section class="title_container">
-            <div class="title_text">
+            <div class="title_text left_side">
                 <h3>Title</h3>
                 <p>Duis irure duis ut officia aute cillum cillum eu consectetur nulla. Amet id eu eiusmod irure ullamco anim irure do cillum esse elit. Velit ex ullamco labore cillum reprehenderit ullamco quis nulla cillum cillum dolore incididunt nulla. Fugiat aute velit aliquip id ea ullamco tempor Lorem id. Et cupidatat nostrud eu sint exercitation velit ut nulla. Aute exercitation et cupidatat minim non mollit aliquip dolor excepteur est irure do pariatur mollit. Non nisi fugiat labore excepteur id ad.</p>
             </div>
-            <img class="title_img" src="5.png"/>
+            <div class="img_container">
+            <img class="title_img right_side" src="5.png"/>
+            </div>
         </section>
         <section class="title_container">
+            <div class="img_container left_side">
             <img class="title_img" src="19.png"/>
-            <div class="title_text">
+            </div>
+            <div class="title_text right_side">
                 <h3>Title</h3>
                 <p>Occaecat qui sunt nisi magna aute ad. Adipisicing duis magna ullamco sint. Aliquip deserunt aliqua magna labore minim. Sint aliquip nostrud eiusmod elit aliqua culpa anim ipsum excepteur exercitation. Lorem ex in cillum ad nisi sit cillum veniam veniam elit ullamco.</p>
             </div>
         </section>
+        <section class="carousel_container">
+            <div class="nav">
+                <p class="prev"><</p>
+            </div>
+            <div class="carousel">
+                <div class="card">
+                    <h4>Lorem ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sapiente reprehenderit voluptas ipsum dignissimos vitae, aspernatur dicta deserunt eum quidem eveniet voluptates. Quisquam tempore unde autem rerum sed deleniti nemo.</p>
+                </div>
+                <div class="card">
+                    <h4>Lorem ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laborum, quod inventore facilis nihil error quae incidunt in optio rem, excepturi expedita, deserunt corporis tempore earum aliquam eum tenetur non.</p>
+                </div>
+                <div class="card">
+                    <h4>Lorem ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In fuga labore, totam sint ducimus deleniti saepe, autem, unde quod ipsa voluptate dicta at ex delectus laudantium tempora vero iste ratione?</p>
+                </div>
+                <div class="card">
+                    <h4>Lorem ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sapiente reprehenderit voluptas ipsum dignissimos vitae, aspernatur dicta deserunt eum quidem eveniet voluptates. Quisquam tempore unde autem rerum sed deleniti nemo.</p>
+                </div>
+                <div class="card">
+                    <h4>Lorem ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laborum, quod inventore facilis nihil error quae incidunt in optio rem, excepturi expedita, deserunt corporis tempore earum aliquam eum tenetur non.</p>
+                </div>
+                <div class="card">
+                    <h4>Lorem ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In fuga labore, totam sint ducimus deleniti saepe, autem, unde quod ipsa voluptate dicta at ex delectus laudantium tempora vero iste ratione?</p>
+                </div>
+            </div>
+            <div class="nav">
+                <p class="next">></p>
+            </div>
+        </section>
+        <section class="description">
+            <div>
+
+            </div>
+            <div>
+                <img src="5.png" class="descr_img"/>
+            </div>
+        </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
-<!-- https://stackoverflow.com/questions/41330707/how-can-i-format-php-files-with-html-markup-in-visual-studio-code -->
