@@ -67,21 +67,70 @@ h3{
     align-content: center;
 }
 
-.title_img{
-    height: 300px;
-    width: 300px;
-    background-size: cover;
+.img_container{
+    width: 50vw;
+    background-color:#123458;
+    align-content: center;
+    
+}
+.title_img, .descr_img{
+    width: 40vh;
+    height: 40vh;
     overflow: hidden;
-    background-color:cadetblue;
+    background-size:contain;
 }
 .title_container{
-    background-color: burlywood;
     display:flex;
-    
+    height: 50vh;
+    background-color: #D4C9BE;
 }
 .title_text{
     display:flex;
     flex-direction: column;
+    width: 50vw;
+    justify-content: center;
+    padding:2vw;
+    text-align: start;
+}
+.left_side{
+    padding-left: 60px;
+}
+.right_side{
+    padding-right: 60px;
+}
+
+ .carousel_container{
+    display:flex;
+    padding:60px;
+ }
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.card {
+    min-width: 380px;
+    height: 420px;
+    margin:10px;
+    padding:20px;
+    background: #D4C9BE;
+    border-radius: 3px;
+    display: flex;
+    text-align: start;
+    justify-content: center;
+}
+.nav{
+    align-content: center;
+}
+.next, .prev{
+    padding: 10px;
+    margin:10px;
+    color:#030303;
+    font-size: 40px;
+    align-items: center;
+    cursor:pointer;
 }
 /*#endregion*/
 
