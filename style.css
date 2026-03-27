@@ -208,8 +208,8 @@ button{
     margin:10px;
 }
 
-#addBook{
-    display:block;
+#addBook, #updateBook{
+    display:none;
     background-color: #0303039f;
     position:fixed;
     top:0;
