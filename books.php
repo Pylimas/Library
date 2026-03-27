@@ -16,11 +16,13 @@ include_once "dbh.inc.php"
 <body>
     <?php require_once "header.php"?>
     <main>
+        <div>
+            <button onclick="showAddBookForm()">Add book</button>
+        </div>
         <div class="tableContainer">
-            <table class="table custom-table">
+            <table>
                 <thead>
                     <tr>
-                        
                         <th scope="col">Book name</th>
                         <th scope="col">Author</th>
                         <th scope="col">Isbn</th>
@@ -47,8 +49,11 @@ include_once "dbh.inc.php"
                 </tbody>
             </table>
         </div>
-        <div>
+        <div id="addBook">
             <form action="addBook.php" method="post">
+                <div class="close-button">
+                    <button type="button" class="btn-close" aria-label="Close" onclick="showAddBookForm()"></button>
+                </div>
                 <div class="mb-3">
                     <label for="bookName" class="form-label">Book name</label>
                     <input type="text" class="form-control" id="bookName" name="name">
@@ -69,5 +74,7 @@ include_once "dbh.inc.php"
             </form>
         </div>
     </main>
+    <?php require_once "footer.php"?>
+    <script src="script.js"></script>
 </body>
 </html>
