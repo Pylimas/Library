@@ -28,6 +28,7 @@ include_once "dbh.inc.php"
                         <th scope="col">Isbn</th>
                         <th scope="col">Quantity in library</th>
                         <th scope="col">Free books</th>
+                        <th scope="col">#</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +43,9 @@ include_once "dbh.inc.php"
                                 <td>'.$row['isbn'].'</td>
                                 <td>'.$row['quantity'].'</td>
                                 <td>'.$row['free'].'</td>
+                                <td><button type="button" onclick="showUpdateBookForm('.$row['id'].')">
+                                        Edit
+                                    </button></td>
                                 </tr>';
                             }
                         }
@@ -69,6 +73,31 @@ include_once "dbh.inc.php"
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Quantity</label>
                     <input type="number" class="form-control" id="quantity" name="quantity">
+                </div>
+                <input type="submit"/>
+            </form>
+        </div>
+        <div id="updateBook">
+            <form action="updateBook.php" method="post">
+                <div class="close-button">
+                    <button type="button" class="btn-close" aria-label="Close" onclick="showUpdateBookForm()"></button>
+                </div>
+                <input type="hidden" name="id" value="">
+                <div class="mb-3">
+                    <label for="updateName" class="form-label">Book name</label>
+                    <input type="text" class="form-control" id="updateName" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="updateAuthor" class="form-label">Book author</label>
+                    <input type="text" class="form-control" id="updateAuthor" name="author">
+                </div>
+                <div class="mb-3">
+                    <label for="updateIsbn" class="form-label">Book isbn</label>
+                    <input type="text" class="form-control" id="updateIsbn" name="isbn">
+                </div>
+                <div class="mb-3">
+                    <label for="updateQuantity" class="form-label">Quantity</label>
+                    <input type="number" class="form-control" id="updateQuantity" name="quantity">
                 </div>
                 <input type="submit"/>
             </form>
