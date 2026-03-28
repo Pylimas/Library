@@ -47,9 +47,12 @@ include_once "dbh.inc.php"
                                 <td><button type="button" onclick="showUpdateBookForm('.$row['id'].')">
                                         Edit
                                     </button></td>
-                                <td><button type="button" onclick="showUpdateBookForm('.$row['id'].')">
-                                    Delete
-                                </button></td>
+                                <td>
+                                    <form action="deleteBook.php" method="POST">
+                                        <input type="hidden" name="id" value="'.$row['id'].'">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </td>
                                 </tr>';
                             }
                         }
@@ -58,7 +61,7 @@ include_once "dbh.inc.php"
             </table>
         </div>
         <div id="addBook">
-            <form action="addBook.php" method="post">
+            <form action="addBook.php" method="post" class="form">
                 <div class="close-button">
                     <button type="button" class="btn-close" aria-label="Close" onclick="showAddBookForm()"></button>
                 </div>
@@ -82,7 +85,7 @@ include_once "dbh.inc.php"
             </form>
         </div>
         <div id="updateBook">
-            <form action="updateBook.php" method="post">
+            <form action="updateBook.php" method="post" class="form">
                 <div class="close-button">
                     <button type="button" class="btn-close" aria-label="Close" onclick="showUpdateBookForm()"></button>
                 </div>
