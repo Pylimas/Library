@@ -6,9 +6,9 @@ if($_SERVER["REQUEST_METHOD"] =="POST"){
     $quantity=$_POST["quantity"];
     try {
         require_once "dbh.inc.php";
-        $query = "INSERT INTO book (book_name, author,isbn,quantity,free) VALUES (?,?,?,?,?);";
+        $query = "INSERT INTO book (book_name, author,isbn,quantity,taken) VALUES (?,?,?,?,?);";
         $stmt = $pdo->prepare($query);
-        $stmt->execute([$name, $author, $isbn, $quantity,$quantity]);
+        $stmt->execute([$name, $author, $isbn, $quantity,0]);
         $pdo=null;
         $stmt=null;
         header("Location: books.php");
