@@ -27,7 +27,8 @@ include_once "dbh.inc.php"
                         <th scope="col">Author</th>
                         <th scope="col">Isbn</th>
                         <th scope="col">Quantity in library</th>
-                        <th scope="col">Free books</th>
+                        <th scope="col">Taken books</th>
+                        <th scope="col">#</th>
                         <th scope="col">#</th>
                     </tr>
                 </thead>
@@ -42,10 +43,13 @@ include_once "dbh.inc.php"
                                 <td>'.$row['author'].'</td>
                                 <td>'.$row['isbn'].'</td>
                                 <td>'.$row['quantity'].'</td>
-                                <td>'.$row['free'].'</td>
+                                <td>'.$row['taken'].'</td>
                                 <td><button type="button" onclick="showUpdateBookForm('.$row['id'].')">
                                         Edit
                                     </button></td>
+                                <td><button type="button" onclick="showUpdateBookForm('.$row['id'].')">
+                                    Delete
+                                </button></td>
                                 </tr>';
                             }
                         }
