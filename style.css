@@ -232,3 +232,25 @@ button{
 }
 
 /*#endregion*/
+
+/*#region Readers*/
+
+.panel{
+    display:none;
+    padding: 0 15%;
+    margin-bottom: 20px;
+    text-align: start;
+}
+.active, .accordion:hover{
+    background-color:#D4C9BE;
+    color:#030303;
+}
+.accordion{
+    text-align: left;
+    cursor:pointer;
+    width: 70%;
+    transition: 0.4s;
+}
+
+
+/*#endregion*/
