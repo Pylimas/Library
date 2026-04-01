@@ -24,7 +24,7 @@ include_once "dbh.inc.php"
                     echo '<button class="accordion">'.$row['reader_card_id'].'</button>
                     <div class="panel">
                     <p>Name: '.$row['reader_name'].'</p>';
-                        $sql = "SELECT * FROM taken_books where reader_id =".$row['reader_id']." ;";
+                        $sql = "SELECT * FROM taken_books where reader_id =".$row['id']." ;";
                         $result_books = $pdo->query($sql);
                         if($result_books->rowCount() > 0){
                             echo ' <table style="width:100%;">
@@ -47,18 +47,14 @@ include_once "dbh.inc.php"
                                 </table>';
                             }
                         }
-                    echo '</div>';
+                        echo ' <form action="giveBook.php" method="POST">
+                            <input type="hidden" name="id" value="'.$row['id'].'">
+                            <button type="submit">Give book</button>
+                        </form>
+                    </div>';
                 }
             }
         ?>
-        <button class="accordion">Section 1</button>
-        <div class="panel">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod nostrum consequuntur qui enim soluta, odit earum quos quis architecto explicabo rerum hic officia ab. Sed aut error perspiciatis aperiam porro? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci doloribus quidem voluptates ad? Illum delectus quos quaerat dolor modi quibusdam illo eum iste libero aliquid dolores accusantium, eos aut?</p>
-        </div>
-        <button class="accordion">Section 2</button>
-        <div class="panel">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod nostrum consequuntur qui enim soluta, odit earum quos quis architecto explicabo rerum hic officia ab. Sed aut error perspiciatis aperiam porro? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci doloribus quidem voluptates ad? Illum delectus quos quaerat dolor modi quibusdam illo eum iste libero aliquid dolores accusantium, eos aut?</p>
-        </div>
     </main>
     <?php require_once "footer.php"?>
     <script>
