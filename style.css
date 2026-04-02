@@ -211,7 +211,7 @@ button{
     margin:10px;
 }
 
-#addBook, #updateBook{
+#addBook, #updateBook, #giveBook{
     display:none;
     background-color: #0303039f;
     position:fixed;
