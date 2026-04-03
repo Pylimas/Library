@@ -81,7 +81,7 @@ include_once "dbh.inc.php"
                     <label for="quantity" class="form-label">Quantity</label>
                     <input type="number" class="form-control" id="quantity" name="quantity">
                 </div>
-                <input type="submit"/>
+                <button type="submit">Add book</button>
             </form>
         </div>
         <div id="updateBook">
@@ -106,7 +106,7 @@ include_once "dbh.inc.php"
                     <label for="updateQuantity" class="form-label">Quantity</label>
                     <input type="number" class="form-control" id="updateQuantity" name="quantity">
                 </div>
-                <input type="submit"/>
+                <button type="submit">Update book</button>
             </form>
         </div>
     </main>
