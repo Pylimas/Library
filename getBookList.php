@@ -3,9 +3,9 @@ include_once "dbh.inc.php";
 
 $id = intval($_GET['id']);
 $query = "SELECT id, book_name, author 
-            FROM book WHERE id NOT IN (SELECT book_id from taken_books where reader_id = ?)";
+            FROM book WHERE id NOT IN (SELECT book_id from taken_books where reader_id = $id);";
 $stmt = $pdo->prepare($query);
-$stmt->execute([$id]);
+$stmt->execute();
 
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
