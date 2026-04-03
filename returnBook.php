@@ -9,9 +9,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt = $pdo->prepare($query);
         $stmt->execute();
 
-        $query = "SELECT taken FROM book WHERE id = $book_id;";
-        $query = "UPDATE book SET taken=taken-1 where id = $book_id;";
-
+        $query = "UPDATE book SET taken= taken-1 where id = $book_id;";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
         $pdo=null;
         $stmt=null;
         header("Location: readers.php");
