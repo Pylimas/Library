@@ -39,6 +39,7 @@ include_once "dbh.inc.php"
                                 <td>'.$book['author'].'</td>
                                 <td>
                                 <form action="returnBook.php" method="POST">
+                                        <input type="hidden" name="book_id" value="'.$book['book_id'].'">
                                         <input type="hidden" name="id" value="'.$book['id'].'">
                                         <button type="submit">Return</button>
                                     </form>
@@ -47,30 +48,25 @@ include_once "dbh.inc.php"
                                 </table>';
                             }
                         }
-                        echo ' <form action="giveBook.php" method="POST">
-                            <input type="hidden" name="id" value="'.$row['id'].'">
-                            <button type="submit">Give book</button>
-                        </form>
+                        echo '<button type="button" onclick="showGiveBookForm('.$row['id'].')">Give book</button>
                     </div>';
                 }
             }
         ?>
+        <div id="giveBook">
+            <form name="bookDropdown" class="form" action="giveBook.php" method="POST">
+                <div class="close-button">
+                    <button type="button" class="btn-close" aria-label="Close" onclick="hideGiveBookForm()"></button>
+                </div>
+                <input type="hidden" name="user_id" id="user_id" value="">
+                <select class="form-select" aria-label="Default select example" id="bookList" name="chosenBookID">
+                    <option value="">Open this select menu</option>
+                </select>
+                <button type="submit">Give book</button>
+            </form>
+        </div>
     </main>
     <?php require_once "footer.php"?>
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-        for(i=0;i< acc.length; i++){
-            acc[i].addEventListener("click", function(){
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if(panel.style.display === "block"){
-                    panel.style.display = "none";
-                }else{
-                    panel.style.display = "block";
-                }
-            });
-        }
-    </script>
+    <script src="readerScript.js"></script>
 </body>
 </html>
