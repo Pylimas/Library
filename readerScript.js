@@ -17,6 +17,17 @@ function showGiveBookForm(id){
   if(form.style.display === "none"){
     form.style.display = "block";
     showBookList(id);
+    var input = document.getElementById('user_id');
+    input.value = id;
+  }else{
+    form.style.display = "none";
+  }
+}
+
+function hideGiveBookForm(){
+  var form = document.getElementById("giveBook");
+  if(form.style.display === "none"){
+    form.style.display = "block";
   }else{
     form.style.display = "none";
   }
