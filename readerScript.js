@@ -16,25 +16,23 @@ function showGiveBookForm(id){
   var form = document.getElementById("giveBook");
   if(form.style.display === "none"){
     form.style.display = "block";
-    getBooksForUser(id);
+    showBookList(id);
   }else{
     form.style.display = "none";
   }
 }
 
-function getBooksForUser(id){
-    let dropdown = document.forms['bookDropdown'].bookList;
-    if(id.trim() === ""){
-        dropdown.selectedIndex=0;
-        return false;
-    }
-    // fetch('')
-    // .then(response => response.json())
-    // .then(function()){
-    //     let out="";
-    //     for(let book in ){
-    //         out+= '<option value="${book['id']}">${book['book_name']} +" "+ ${book['autror']}</option>'
-    //     }
-    //     dropdown.innerHTML=out;
-    // }
+function showBookList(id){
+  const list = document.getElementById("bookList");
+  fetch("getBookList.php?id="+id)
+  .then(res => res.json())
+  .then(data => {
+    list.innerHTML="";
+    data.forEach(d => {
+      const option = document.createElement("option");
+      option.textContent = d.book_name + " "+d.author;
+      option.value = d.id;
+      list.appendChild(option);
+    });
+  });
 }
