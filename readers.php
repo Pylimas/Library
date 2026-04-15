@@ -1,5 +1,5 @@
 <?php 
-include_once "dbh.inc.php"
+include_once "dbh.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -44,9 +44,10 @@ include_once "dbh.inc.php"
                                         <button type="submit">Return</button>
                                     </form>
                                 </td>
-                                </tr>
-                                </table>';
+                                </tr>';
+                                
                             }
+                            echo '</table>';
                         }
                         echo '<button type="button" onclick="showGiveBookForm('.$row['id'].')">Give book</button>
                     </div>';
