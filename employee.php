@@ -20,25 +20,38 @@ include_once "dbh.inc.php";
           <button onclick="showAddEmployeeForm()">Add employee</button>
         </div>
         <?php
-        $sql = "SELECT * FROM emplyee;";
+        $sql = "SELECT * FROM employee;";
         $result = $pdo->query($sql);
         if($result->rowCount()>0){
+             echo ' <div class="tableContainer"><table>
+                <thead><tr>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+                </tr></thead>';
             while ($row = $result->fetch()){
-                echo '<div class="emplyeeCard">
-                <p>Name: '.$row['emplyee_name'].'</p>
-                <p>Surname: '.$row['surname'].'</p>
-                <div>
+                echo '<tr>
+                <td>'.$row['employee_name'].'</td>
+                <td>'.$row['surname'].'</td>
+                <td>
                 <form action="deleteEmployee.php" method="POST">
                     <input type="hidden" name="id" value="'.$row['id'].'">
                     <button type="submit">Delete</button>
                 </form>
-                </div>
-                </div>';
+                </td>
+                <td>
+                    <button type="button" onclick="showUpdateEmployeeForm('.$row['id'].')">
+                        Edit
+                    </button>
+                </td>
+                </tr>';
             }
+            echo '</table></div>';
         }
         ?>
         <div id="addEmployee">
-            <form class="form" action="addEmployee.php" method="post">
+            <form class="form" action="addEmployee.php" method="POST">
                 <div class="close-button">
                     <button type="button" class="btn-close" aria-label="Close" onclick="showAddEmployeeForm()"></button>
                 </div>
@@ -61,6 +74,23 @@ include_once "dbh.inc.php";
                 <button type="submit">Add employee</button>
             </form>
         </div>
+        <div id="updateEmployee">
+            <form class="form" action="updateEmployee.php" method="POST">
+                <input type="hidden" name="id" id="updateId">
+                <div class="close-button">
+                    <button type="button" class="btn-close" aria-label="Close" onclick="hideUpdateEmployeeForm()"></button>
+                </div>
+                <div class="mb-3">
+                    <label for="name_update" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="updateName" name="name_update">
+                </div>
+                <div class="mb-3">
+                    <label for="surname_update" class="form-label">Surname</label>
+                    <input type="text" class="form-control" id="updateSurname" name="surname_update">
+                </div>
+                <button type="submit">Save</button>
+            </form>
+        </div>
     </main>
     <?php require_once "footer.php"?>
     <script>
@@ -71,6 +101,21 @@ include_once "dbh.inc.php";
             }else{
                 form.style.display = "none";
             }
+        }
+        function showUpdateEmployeeForm(id){
+            var form = document.getElementById("updateEmployee");
+            form.style.display = "block";
+            document.querySelector('#updateEmployee input[name="id"]').value = id;
+            fetch('getEmployee.php?id=' + id)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('updateName').value = data.employee_name;
+                    document.getElementById('updateSurname').value = data.surname;
+                });
+        }
+        function hideUpdateEmployeeForm(){
+            var form = document.getElementById("updateEmployee");
+            form.style.display = "none";
         }
     </script>
 </body>
