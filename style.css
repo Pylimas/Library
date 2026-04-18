@@ -230,7 +230,9 @@ button{
 .close-button{
     text-align: end;
 }
-
+.inputBox{
+    text-align: start;
+}
 /*#endregion*/
 
 /*#region Readers*/
